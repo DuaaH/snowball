@@ -3,11 +3,14 @@ import axios from 'axios'
 // redux is sync so i need async to deal with api
 export const getUserPledges = () => async (dispatch) => {
 
+  dispatch({
+    type: 'LOADING'
+  })
+
   let userId = 1;
   const response = await axios.get(`/api/home/${userId}`)
 
   const userPledges = response.data
-
   dispatch({
     type: 'GET_USER_PLEDGES',
     userPledges
@@ -41,8 +44,6 @@ export const getPledgeInfo = (pledge_id) => async (dispatch) => {
 
   })
 }
-
-
 
 export const getCategoryPledges = (category_id) => async (dispatch, getState) => {
 
