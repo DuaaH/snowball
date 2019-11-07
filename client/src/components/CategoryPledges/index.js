@@ -33,7 +33,7 @@ class CategoryPledges extends React.Component {
         {serverError !== "" ? <h1>{serverError}</h1> : (
           <>
             <div className="category-pledges-page">
-              {this.props.loading2 ?
+              {this.props.loading ?
                 <div className="loading-spinner">
                   <ClipLoader
                     className="loading-spinner__home"
@@ -74,7 +74,7 @@ class CategoryPledges extends React.Component {
 const mapStateToProps = (state) => {
   return {
     pledge_info: state.pledge_info,
-    loading2: state.loading2,
+    loading: state.loading,
   }
 }
 
@@ -86,4 +86,3 @@ const mapDispatchToProps = (dispatch) => {
   }, dispatch)
 }
 export default connect(mapStateToProps, mapDispatchToProps)(CategoryPledges)
-
