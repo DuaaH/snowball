@@ -13,7 +13,7 @@ class PledgePage extends React.Component {
   state = {
     pledgeInfo: [],
     pledge_id: '',
-    serverError: ""
+    serverError: ''
   }
 
   componentDidMount() {
