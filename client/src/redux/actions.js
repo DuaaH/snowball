@@ -50,9 +50,6 @@ export const getCategoryPledges = (category_id) => async (dispatch, getState) =>
     type: 'LOADING',
   })
 
-  console.log("hi");
-
-
   const response = await axios.get(`/api/action-category/${category_id}`)
   const pledge_info = response.data
   dispatch({
